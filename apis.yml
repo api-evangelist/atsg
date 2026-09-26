@@ -1,23 +1,81 @@
 aid: atsg
+
 name: XTIUM
-description: 'XTIUM is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://xtium.com/hubfs/XTIUM-featured-logo.jpg
+
+description: XTIUM provides managed IT solutions, AI services, and cloud infrastructure for enterprises. Their offerings include AI readiness
+  assessments, managed detection and response, desktop-as-a-service, and secure networking. The company emphasizes secure, scalable solutions
+  across healthcare, finance, retail, and education sectors, positioning itself as a trusted partner for digital transformation.
+
 url: https://raw.githubusercontent.com/api-evangelist/atsg/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
-- Company
-apis: []
+- Managed IT
+- AI Services
+- Cloud Infrastructure
+- Enterprise Solutions
+- Security
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/atsg-status-security.txt
+- type: WellKnown
+  url: well-known/atsg-well-known.yml
+- type: Hosts
+  url: hosts/atsg-hosts.yml
+- type: Vendors
+  url: vendors/atsg-vendors.yml
+- type: StatusPage
+  url: https://status.xtium.com/
+- type: Newsroom
+  url: https://xtium.com/news
+- type: Documentation
+  url: https://help.xtium.com/
+- type: GitHubOrganization
+  url: https://github.com/xtium
+- type: DomainSecurity
+  url: security/atsg-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/atsg_stock/
+  url: https://xtium.com
+
+apis:
+- name: XTIUM API
+  description: API documentation is provided via the Help portal.
+  humanURL: https://help.xtium.com/
+  baseURL: null
+  aid: atsg:xtium-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Help portal renders documentation via JavaScript, no machine‑readable OpenAPI found.
+  evidence:
+  - url: https://help.xtium.com/
+    status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
